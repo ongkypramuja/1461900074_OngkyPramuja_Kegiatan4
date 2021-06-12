@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RakBukuController;
-use App\Http\Controllers\BukuController;
+use App\Http\Controllers\DokterController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +15,5 @@ use App\Http\Controllers\BukuController;
 |
 */
 
-Route::get('/', [RakBukuController::class,'index']);
-Route::resource('buku',BukuController::class);
+Route::get('/', [DokterController::class, 'index']);
+Route::post("dokter-import", [DokterController::class, 'import'])->name("dokter.import");
